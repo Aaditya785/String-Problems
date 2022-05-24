@@ -1,0 +1,33 @@
+public class Solution 
+{
+	public static String reverseWordWise(String str) 
+    {
+		// Write your code here
+
+        String rev = "";
+        int l = str.length(), c = 0;
+        for(int i=l-1;i>=0;i--)
+        {
+            c++;
+            if(str.charAt(i) == ' ')
+            {
+                for(int j=i+1;j<i+c;j++)
+                {
+                    rev += str.charAt(j);
+                }
+                c = 0;
+                rev += ' ';
+            }
+            if(i == 0)
+            {
+                for(int j=i;j<i+c;j++)
+                {
+                    rev += str.charAt(j);
+                }
+                c = 0;
+                rev += ' ';
+            }
+        }
+        return rev;
+	}
+}
